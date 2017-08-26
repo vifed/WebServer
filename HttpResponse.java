@@ -13,7 +13,7 @@ public class HttpResponse  {
 
     HttpRequest req;
     String response;
-    String root = "/home/federico/Scrivania/LNU/root/dir1;"; //  change the directory in basis of your organization of that
+    String root = "/home/federico/Scrivania/LNU/root/dir1;"; //change the path in basis of your organization of the folders
     public String info="";
     public byte[] byteArray;
     String myroot="", myfilename="";
@@ -100,7 +100,7 @@ public class HttpResponse  {
     public void htmlResponse() throws IOException {
 
         File f = new File(myroot + myfilename);
-        if(myfilename.equals("forbidden.html") && myroot.equals("/home/federico/Scrivania/LNU/root/pages/")){ //  change the directory in basis of your organization of that
+        if(myfilename.equals("forbidden.html") && myroot.equals("/home/federico/Scrivania/LNU/root/pages/")){ //change the path in basis of your organization of the folders
             response += header("403", "text/html", f.length());
             response = "Error 403. Access Denied";
         }else {
@@ -137,7 +137,7 @@ public class HttpResponse  {
     public byte[] pngResponse() throws IOException {
         String fileName = myroot + myfilename;
         byte[] data=(new String("")).getBytes();
-        String dir="/home/federico/Scrivania/LNU/root/images/"; //  change the directory in basis of your organization of that
+        String dir="/home/federico/Scrivania/LNU/root/images/"; //change the path in basis of your organization of the folders
         if(myfilename.equals("forbidden.png") && myroot.equals(dir)){
             myroot = dir;
             myfilename = "error403.png";
